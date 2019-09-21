@@ -3,5 +3,6 @@
 ./scripts/shared
 cp -rf shared/ docs/shared/
 
-server=./node_modules/.bin/webpack-dev-server
-$server --inline --config ./webpack.web.js --content-base web/
+# server=./node_modules/.bin/webpack-dev-server
+server=node --inspect ./node_modules/.bin/webpack-dev-server
+$server --inline --config ./webpack.web.js --content-base docs/
