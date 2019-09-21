@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "karma start --single-run",
-    "test-e2e": "node-nightly --inspect ./node_modules/webpack/bin/webpack.js && ./node_modules/.bin/cypress open",
-    "start": "node --inspect ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base docs/",
+    "test-e2e": "node --inspect ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base docs/ && ./node_modules/.bin/cypress open",
+    "start": "node --inspect ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base /Users/nils/Documents/gitRepositories/pdf-annotate.js/docs",
     "build": "MINIFY=1 webpack",
     "debug": "node-nightly --inspect ./node_modules/webpack/bin/webpack.js",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/nils-tekampe/pdf-annotate.js#readme",
   "devDependencies": {
-    "babel-core": "6.26.3",
+    "@babel/core": "^7.6.0",
     "babel-loader": "8.0.6",
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-preset-es2015": "^6.24.1",
@@ -54,10 +54,17 @@
     "sinon-chai": "^3.3.0",
     "twitter-text": "^3.0.0",
     "webpack": "4.40.2",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-server": "3.8.1"
   },
   "dependencies": {
     "create-stylesheet": "^0.3.0",
     "object-assign": "^4.1.1"
-  }
+  },
+  "babel": {
+    "presets": [
+        "@babel/env",
+        "@babel/react"
+    ]
+},
 }
