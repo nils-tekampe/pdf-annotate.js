@@ -10,9 +10,9 @@
   "scripts": {
     "test": "karma start --single-run",
     "test-e2e": "npm run debug && ./node_modules/.bin/cypress open",
-    "start": "node --inspect ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base docs",
-    "build": "MINIFY=1 webpack",
-    "debug": "node-nightly --inspect ./node_modules/webpack/bin/webpack.js",
+    "start": "node ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base docs",
+    "build": "MINIFY=1 webpack --mode production  --config ./webpack.web.js ",
+    "debug": "node --inspect ./node_modules/.bin/webpack-dev-server --inline --config ./webpack.web.js --content-base docs",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
