@@ -1,21 +1,21 @@
-var webpack = require('webpack');
+var webpack = require("webpack");
 
 module.exports = {
-  entry: './docs/main.js',
+  entry: "./docs/main.js",
 
   output: {
-    filename: 'index.js',
-    path: 'docs'
+    filename: "index.js",
+    path: "/Users/nils/Documents/gitRepositories/pdf-annotate.js/docs"
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['es2015']
+          presets: ["es2015"]
         }
       }
     ]
