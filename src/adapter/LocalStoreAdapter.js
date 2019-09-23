@@ -113,8 +113,6 @@ function getAnnotations(documentId) {
   for (var entry in localStorage) {
     if (localStorage.hasOwnProperty(entry)) {
       if (entry.includes(documentId, 0) && entry.includes("annotation", 0)) {
-        console.log(entry);
-        console.log(localStorage.getItem(entry));
         annotations.push(JSON.parse(localStorage.getItem(entry)));
       }
     }
