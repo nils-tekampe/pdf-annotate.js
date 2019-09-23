@@ -20,14 +20,13 @@ module.exports = {
 
   plugins: [new HtmlWebpackPlugin({title: "Output Management"})],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ["es2015"],
-          plugins: ["add-module-exports"]
+          presets: ["@babel/preset-env"]
         }
       }
     ]
